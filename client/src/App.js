@@ -1,14 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./Components/AppBar";
-import Login from "./Components/Login";
+import HomePage from "./pages/Home";
+import ViewerPage from "./pages/Viewer/Viewer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Login />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
