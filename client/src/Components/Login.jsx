@@ -13,11 +13,25 @@ function Login() {
   const [userid, setuserid] = useState("");
   const [clientsecret, setclientsecret] = useState("");
 
-  const goToViewer = () => {
-    axios.post("localhost:8000/user/token", {
-      user_id: userid,
-      client_secret: clientsecret,
-    });
+  const goToViewer = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(
+        "http://localhost:8000/user/token",
+        {
+          user_id: userid,
+          client_secret: clientsecret,
+        } //);
+      )
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem("accessToken", response.data.access_token);
+        nav("/Viewer");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -30,7 +44,8 @@ function Login() {
           <Col>
             <Form.Control
               type="password"
-              placeholder="user_id"
+              //placeholder="user_id"
+              defaultValue="7Yp1tp1nPRQHqQxTrOPHmZXkA1dfp6Jz"
               onChange={(e) => setuserid(e.target.value)}
             />
           </Col>
@@ -47,7 +62,8 @@ function Login() {
           <Col>
             <Form.Control
               type="password"
-              placeholder="client_secret"
+              //placeholder="client_secret"
+              defaultValue="wYJf7fTP6Ajp7cmL"
               onChange={(e) => setclientsecret(e.target.value)}
             />
           </Col>

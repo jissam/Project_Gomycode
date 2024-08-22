@@ -47,7 +47,7 @@ module.exports.deleteuserbyid = async (req, res) => {
 //POST: localhost:8000/user/token
 module.exports.generateToken = async (req, res) => {
   const { user_id, client_secret } = req.body;
-
+  console.log(req.body);
   const btoa = Buffer.from(user_id + ":" + client_secret).toString("base64");
   console.log(btoa, user_id, client_secret);
   const options = {

@@ -8,6 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/Viewer" element={<ViewerPage />} />
       </Routes>
     </BrowserRouter>
   );
