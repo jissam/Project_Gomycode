@@ -9,10 +9,10 @@ module.exports.getAllmodels = async (req, res) => {
 //POST: localhost:8000/model/add
 module.exports.addmodel = async (req, res) => {
   try {
-    const { name, path } = req.body;
+    const { name, urn } = req.body;
     const addedmodel = new model({
       name,
-      path,
+      urn,
     });
 
     await addedmodel.save();

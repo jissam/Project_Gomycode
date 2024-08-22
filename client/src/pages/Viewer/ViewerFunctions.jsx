@@ -28,8 +28,6 @@ function launchViewer(div, urn) {
     onDocumentLoadFailure
   );
 
-  viewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT);
-
   function onDocumentLoadSuccess(viewerDocument) {
     var defaultModel = viewerDocument.getRoot().getDefaultGeometry();
     viewer.loadDocumentNode(viewerDocument, defaultModel);
