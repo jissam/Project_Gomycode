@@ -3,7 +3,7 @@ import launchViewer from "./ViewerFunctions";
 import { AppBar } from "@mui/material";
 import Login from "../../Components/Login";
 import ListBoxModel from "../../Components/ListBoxModel";
-import Model3D from "../../Components/Model3D";
+import Model3D from "../../Components/Model3DByDefault";
 
 const ViewerPage = ({}) => {
   return (

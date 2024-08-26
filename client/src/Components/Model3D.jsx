@@ -1,21 +1,31 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import launchViewer from "../pages/Viewer/ViewerFunctions";
+import { useParams } from "react-router-dom";
+import ListBoxModel from "./ListBoxModel";
 
-class Model3D extends Component {
-  componentDidMount() {
-    var documentId =
-      "urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6M2R4X2lmY19xYTIzL3JzdF9iYXNpY19zYW1wbGVfcHJvamVjdC5ydnQ";
+function Model3D() {
+  const { modelURN } = useParams(); // Extract modelURN from the URL
+  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaffffffffffaaaaaaaaaaa=   ", {
+    modelURN,
+  });
+  useEffect(() => {
+    // Replace with the actual logic to use modelURN if needed
+    //var documentId = { modelURN };
+    //var documentId =
+    //  "urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6M2R4X2lmY19xYTIzL3JzdF9iYXNpY19zYW1wbGVfcHJvamVjdC5ydnQ";
+    var documentId = "urn:" + modelURN;
     launchViewer("viewerDiv", documentId);
-  }
+  }, [modelURN]); // Run this effect whenever modelURN changes
 
-  render() {
-    return (
+  return (
+    <>
+      <ListBoxModel></ListBoxModel>
       <div
         style={{ position: "absolute", width: "100%", height: "85%" }}
         id="viewerDiv"
       />
-    );
-  }
+    </>
+  );
 }
 
 export default Model3D;
