@@ -29,12 +29,20 @@ function ListBoxModel() {
     console.log(`Selected Model ID---->: ${modelURN}`);
   };
 
+  const handleLogout = () => {
+    console.log(
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      localStorage.acc
+    );
+    localStorage.removeItem("accessToken");
+    navigate("/");
+  };
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
+      <img src={logo} />
       <Container>
-        <Navbar.Brand href="#home">
-          <img src={logo} />
-        </Navbar.Brand>
+        <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
@@ -56,6 +64,11 @@ function ListBoxModel() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div className="buttonContainer">
+        <button className="Logout" onClick={() => handleLogout()}>
+          Logout{" "}
+        </button>
+      </div>
     </Navbar>
   );
 }

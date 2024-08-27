@@ -59,3 +59,22 @@ form label {
   font-weight: bold; /* Texte en gras pour les étiquettes */
   margin-bottom: 10px;
 }
+
+.Logout {
+  background-color: #999595;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block element */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon on hover */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.buttonContainer {
+  text-align: right; /* Align the content (button) to the right */
+  margin-right: 50px; /* Optional: add some margin on the right */
+}

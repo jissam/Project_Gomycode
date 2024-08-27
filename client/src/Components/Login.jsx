@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -9,10 +9,14 @@ import axios from "axios";
 
 function Login() {
   const nav = useNavigate();
-
   const [userid, setuserid] = useState("");
   const [clientsecret, setclientsecret] = useState("");
 
+  useEffect(() => {
+    if (localStorage.getItem("accessToken")) {
+      nav("/Viewer");
+    }
+  }, []);
   const goToViewer = (e) => {
     e.preventDefault();
 
