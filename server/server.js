@@ -13,6 +13,7 @@ server.use("/user", userRoute);
 server.use("/model", modelRoute);
 
 //run server
-server.listen(8000, () => {
+const PORT = process.env.PORT || 8000;
+server.listen(PORT, () => {
   console.log("you are using port 8000");
 });
